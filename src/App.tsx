@@ -1,13 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import classes from './Style.module.scss'
+import {Provider, useDispatch, useSelector} from "react-redux";
+import { store } from "./store"
+import Test from "./components/first"
 
 function App() {
+
   return (
+      <Provider store={store}>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p className={classes.style}>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
@@ -18,8 +21,10 @@ function App() {
         >
           Learn React
         </a>
+        <Test />
       </header>
     </div>
+      </Provider>
   );
 }
 
